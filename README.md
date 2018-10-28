@@ -1,2 +1,2 @@
 # Travis-CV
-My website CB
+My website CV

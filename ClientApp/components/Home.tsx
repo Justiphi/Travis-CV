@@ -11,6 +11,7 @@ export class Home extends React.Component<RouteComponentProps<{}>, {}> {
                 <TextLoop>
                     <span>Software Developer</span>
                     <span>Student</span>
+                    <span>Web Developer</span>
                 </TextLoop>
             </h2>
             <h1>Hello, world!</h1>

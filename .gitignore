@@ -185,6 +185,7 @@ ClientBin/
 orleans.codegen.cs
 
 /node_modules
+!/node_modules/@types/react-text-loop/*
 
 # RIA/Silverlight projects
 Generated_Code/

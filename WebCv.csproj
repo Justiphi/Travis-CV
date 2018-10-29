@@ -17,7 +17,15 @@
 
   <ItemGroup>
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
+    <Compile Remove="Controllers\react-text-loop\**" />
+    <Compile Remove="react-text-loop\**" />
     <Content Remove="ClientApp\**" />
+    <Content Remove="Controllers\react-text-loop\**" />
+    <Content Remove="react-text-loop\**" />
+    <EmbeddedResource Remove="Controllers\react-text-loop\**" />
+    <EmbeddedResource Remove="react-text-loop\**" />
+    <None Remove="Controllers\react-text-loop\**" />
+    <None Remove="react-text-loop\**" />
   </ItemGroup>
 
   <ItemGroup>

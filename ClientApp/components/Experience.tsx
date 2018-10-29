@@ -6,7 +6,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
         return <div>
             <div>
                 <h1>Experience</h1>
-                <p>Previous work done as a freelance developer.</p>
+                <p>My Previous Projects.</p>
             </div>
             <div>
                 <table className='table'>
@@ -32,13 +32,13 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                 <a href='https://biptronlight.co.nz'>bioptronlight.co.nz</a>
                             </td>
                             <td>
-                                Website
+                                Website (freelance)
                             </td>
                             <td>
                                 Wix
                             </td>
                             <td>
-                                nil
+                                not applicable
                             </td>
                         </tr>
                         <tr>
@@ -46,13 +46,13 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                 <a href='https://janicegilesart.com'>janicegilesart.com</a>
                             </td>
                             <td>
-                                Website
+                                Website (freelance)
                             </td>
                             <td>
                                 Wix
                             </td>
                             <td>
-                                nil
+                                not applicable
                             </td>
                         </tr>
                         <tr>
@@ -60,13 +60,13 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                 <a href='https://oneuniqueminds.co.nz'>oneuniqueminds.co.nz</a>
                             </td>
                             <td>
-                                Website
+                                Website (freelance)
                             </td>
                             <td>
                                 PHP (with MVC model) + MySQL database
                             </td>
                             <td>
-                                available pending contact
+                                unavailable
                             </td>
                         </tr>
                         <tr>
@@ -74,7 +74,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                 <a href='https://cmeonline.co'>cmeonline.co</a>
                             </td>
                             <td>
-                                Website
+                                Website (Startup weekend)
                             </td>
                             <td>
                                 ASP.net Core (MVC model with react)
@@ -136,7 +136,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                 .net core + local SQLite database connected via Entity Framework
                             </td>
                             <td>
-                                nil
+                                Unavailable
                             </td>
                         </tr>
                     </tbody>

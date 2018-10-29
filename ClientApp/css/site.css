@@ -38,6 +38,13 @@ body{
     background-color: transparent;
 }
 
+.textScroll{
+    text-align:center;
+}
+.Head{
+    padding-top:30px;
+}
+
 @media (max-width: 767px) {
     /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
     body {

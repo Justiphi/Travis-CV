@@ -6,17 +6,17 @@ export class Home extends React.Component<RouteComponentProps<{}>, {}> {
     public render() {
         return <div>
             <div className="container col-md-8">
-                <h1>Travis Wylie</h1>
-                <hr />
+                <h1><b>Travis Wylie</b></h1>
                 <div>
                     <h2>
                         <TextLoop>
-                            <span>Software Developer</span>
-                            <span>Student</span>
-                            <span>Web Developer</span>
+                            <div>Software Developer</div>
+                            <div>Student</div>
+                            <div>Web Developer</div>
                         </TextLoop>
                     </h2>
                 </div>
+                <hr />
                 <h1>Hello, world!</h1>
                 <p>Welcome to your new single-page application, built with:</p>
                 <ul>

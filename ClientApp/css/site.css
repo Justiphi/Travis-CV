@@ -7,6 +7,12 @@ html {
     background-color: var(--primaryColour);
 }
 
+hr {
+    color: #123455 var(--secondaryColour);
+    background-color: var(--secondaryColour);
+    border-color: var(--secondaryColour);
+}
+
 .main-nav li .glyphicon {
     margin-right: 10px;
 }

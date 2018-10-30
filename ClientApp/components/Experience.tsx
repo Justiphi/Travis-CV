@@ -3,7 +3,7 @@ import { RouteComponentProps } from 'react-router';
 
 export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
     public render() {
-        return <div className='col-md-10'>
+        return <div className="container col-md-8">
             <div>
                 <h1>Experience</h1>
                 <p>My Previous Projects.</p>
@@ -29,7 +29,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                     <tbody>
                         <tr>
                             <td>
-                                <a href='https://biptronlight.co.nz'>bioptronlight.co.nz</a>
+                                <a href='https://www.bioptronlight.co.nz/'>bioptronlight.co.nz</a>
                             </td>
                             <td>
                                 Website <br />(freelance)

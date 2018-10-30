@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,12 +30,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\components\Contact.tsx" />
     <None Remove="ClientApp\components\Experience.tsx" />
     <None Remove="ClientApp\components\Footer.tsx" />
     <None Remove="ClientApp\components\Header.tsx" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\components\Contact.tsx" />
     <TypeScriptCompile Include="ClientApp\components\Experience.tsx" />
     <TypeScriptCompile Include="ClientApp\components\Footer.tsx" />
     <TypeScriptCompile Include="ClientApp\components\Header.tsx" />

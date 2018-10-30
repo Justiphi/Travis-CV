@@ -3,6 +3,7 @@
     --secondaryColour: #0081C3; /*Cerulean Blue*/
     --textColour: #000000; /*Black*/
 }
+
 html {
     background-color: var(--primaryColour);
 }
@@ -38,14 +39,18 @@ body{
     background-color: transparent;
 }
 
-.textScroll{
-    text-align:center;
-}
 .Head{
     padding-top:30px;
 }
 .footer{
     padding-top:30px;
+    padding-bottom:30px;
+}
+.contact{
+    border: 2px solid var(--secondaryColour);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 40px 20px 20px 20px;
 }
 
 @media (max-width: 767px) {
@@ -62,8 +67,8 @@ body{
         width: calc(25% - 20px);
     }
     .main-nav .navbar {
-        border-radius: 0px;
-        border-width: 0px;
+        border-radius: 0;
+        border-width: 0;
         height: 100%;
     }
     .main-nav .navbar-header {
@@ -71,7 +76,7 @@ body{
     }
     .main-nav .navbar-collapse {
         border-top: 1px solid #444;
-        padding: 0px;
+        padding: 0;
     }
     .main-nav .navbar ul {
         float: none;

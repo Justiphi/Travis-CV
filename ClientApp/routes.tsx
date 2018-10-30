@@ -3,14 +3,13 @@ import { Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
 import { Experience } from './components/Experience';
 import { Education } from './components/Education';
+import { Contact } from './components/Contact';
 
 export const routes = <Layout>
     <Route exact path='/' component={ Home } />
-    <Route path='/counter' component={Counter} />
     <Route path='/experience' component={Experience} />
-    <Route path='/fetchdata' component={FetchData} />
+    <Route path='/contact' component={Contact} />
     <Route path='/education' component={Education} />
 </Layout>;

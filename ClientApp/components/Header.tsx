@@ -3,7 +3,7 @@ import TextLoop from 'react-text-loop';
 
 export class Header extends React.Component<{}, {}> {
     public render() {
-        return <div className='Head'>
+        return <div className='Head col-md-10'>
             <h1><b>Travis Wylie</b></h1>
             <div>
                 <h2>

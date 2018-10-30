@@ -2,9 +2,9 @@
 
 export class Footer extends React.Component<{}, {}> {
     public render() {
-        return <div className='footer'>
+        return <div className='footer container col-md-10'>
             <hr />
-            Travis Wylie
+            <p className='text-center text-muted'>Travis Wylie - 2018</p>
         </div>
     }
 }

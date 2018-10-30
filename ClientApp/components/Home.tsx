@@ -5,7 +5,7 @@ export class Home extends React.Component<RouteComponentProps<{}>, {}> {
     public render() {
         return <div className="col-md-10">
             <div className="row">
-                <div className="col-md-4 col-sm-12 imgdiv">
+                <div className="col-md-4 col-sm-5 imgdiv">
                     <img src={require('../images/Travis.jpg')} alt="Travis Wylie" className='portrait' />
                 </div>
                 <div className="col-md-6 col-sm-12">

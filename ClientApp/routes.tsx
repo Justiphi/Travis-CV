@@ -5,12 +5,12 @@ import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import { Experience } from './components/Experience';
-import { Qualifications } from './components/Qualifications';
+import { Education } from './components/Education';
 
 export const routes = <Layout>
     <Route exact path='/' component={ Home } />
     <Route path='/counter' component={Counter} />
     <Route path='/experience' component={Experience} />
     <Route path='/fetchdata' component={FetchData} />
-    <Route path='/qualifications' component={Qualifications} />
+    <Route path='/qualifications' component={Education} />
 </Layout>;

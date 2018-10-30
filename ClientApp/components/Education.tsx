@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
-import TextLoop from 'react-text-loop';
 
-export class Qualifications extends React.Component<RouteComponentProps<{}>, {}> {
+export class Education extends React.Component<RouteComponentProps<{}>, {}> {
     public render() {
         return <div>
             <div className="container col-md-8">
@@ -57,6 +56,9 @@ export class Qualifications extends React.Component<RouteComponentProps<{}>, {}>
                         </tr>
                     </tbody>
                 </table>
+                <br />
+                <h2>Scholarships:</h2>
+                Project Ignite (2017)
             </div>;
         </div>
     }

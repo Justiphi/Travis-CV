@@ -3,7 +3,7 @@ import { RouteComponentProps } from 'react-router';
 
 export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
     public render() {
-        return <div>
+        return <div className='col-md-10'>
             <div>
                 <h1>Experience</h1>
                 <p>My Previous Projects.</p>
@@ -32,7 +32,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                 <a href='https://biptronlight.co.nz'>bioptronlight.co.nz</a>
                             </td>
                             <td>
-                                Website (freelance)
+                                Website <br />(freelance)
                             </td>
                             <td>
                                 Wix
@@ -46,7 +46,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                 <a href='https://janicegilesart.com'>janicegilesart.com</a>
                             </td>
                             <td>
-                                Website (freelance)
+                                Website <br />(freelance)
                             </td>
                             <td>
                                 Wix
@@ -60,10 +60,10 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                 <a href='https://oneuniqueminds.co.nz'>oneuniqueminds.co.nz</a>
                             </td>
                             <td>
-                                Website (freelance)
+                                Website <br />(freelance)
                             </td>
                             <td>
-                                PHP (with MVC model) + MySQL database
+                                PHP (with MVC model) <br />MySQL database
                             </td>
                             <td>
                                 unavailable
@@ -71,13 +71,13 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                         </tr>
                         <tr>
                             <td>
-                                <a href='https://cmeonline.co'>cmeonline.co</a>
+                                <a href='http://cmeonline.co'>cmeonline.co</a>
                             </td>
                             <td>
-                                Website (Startup weekend)
+                                Website <br />(Startup weekend)
                             </td>
                             <td>
-                                ASP.net Core (MVC model with react)
+                                ASP.net Core <br />(MVC model)
                             </td>
                             <td>
                                 To upload
@@ -91,7 +91,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                 Website
                             </td>
                             <td>
-                                PHP (with MVC model) + MySQL database
+                                PHP (with MVC model) <br />MySQL database
                             </td>
                             <td>
                                 To upload pending fix
@@ -99,7 +99,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                         </tr>
                         <tr>
                             <td>
-                                Kitchen hand request system (discontinued)
+                                Kitchen hand request system <br />(discontinued)
                             </td>
                             <td>
                                 Desktop application
@@ -119,7 +119,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                 Desktop application
                             </td>
                             <td>
-                                WPF .net Framework + MySQL database connected via Entity Framework
+                                WPF .net Framework <br />MySQL database connected via Entity Framework
                             </td>
                             <td>
                                 To upload pending completion
@@ -133,7 +133,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                 Discord Chatbot
                             </td>
                             <td>
-                                .net core + local SQLite database connected via Entity Framework
+                                .net core <br /> local SQLite database connected via Entity Framework
                             </td>
                             <td>
                                 Unavailable

@@ -5,6 +5,30 @@ export class Education extends React.Component<RouteComponentProps<{}>, {}> {
     public render() {
         return <div>
             <div className="container col-md-8">
+                <h2> Currently Studying:</h2>
+                <table className='table'>
+                    <thead>
+                        <tr>
+                            <th>
+                                Qualification
+                            </th>
+                            <th>
+                                Studying at
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Diploma in Software Development Level 6
+                            </td>
+                            <td>
+                                Toi Ohomai Institute of Technology
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
                 <h2> Qualifications: </h2>
                 <table className='table'>
                     <thead>
@@ -26,7 +50,7 @@ export class Education extends React.Component<RouteComponentProps<{}>, {}> {
                                 Skills for Entrepeneurs Level 7
                             </td>
                             <td>
-                                Toi Ohomai
+                                Toi Ohomai Institute of Technology
                             </td>
                             <td>
                                 2018
@@ -37,7 +61,7 @@ export class Education extends React.Component<RouteComponentProps<{}>, {}> {
                                 Diploma in Applied Computing Level 5
                             </td>
                             <td>
-                                Toi Ohomai
+                                Toi Ohomai Institute of Technology
                             </td>
                             <td>
                                 2017
@@ -58,7 +82,9 @@ export class Education extends React.Component<RouteComponentProps<{}>, {}> {
                 </table>
                 <br />
                 <h2>Scholarships:</h2>
-                Project Ignite (2017)
+                <ul>
+                    <li>Project Ignite (2017)</li>
+                </ul>
             </div>;
         </div>
     }

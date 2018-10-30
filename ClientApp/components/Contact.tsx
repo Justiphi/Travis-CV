@@ -9,7 +9,7 @@ export class Contact extends React.Component<RouteComponentProps<{}>, {}> {
             <br />
             <div className='row justify-content-center'>
                 <div className='contact col-sm-11 col-md-6 col-lg-5'>
-                    <h3 className='text-center'>email:</h3>
+                    <h3 className='text-center'>Email:</h3>
                     <ul>
                         <li>travis@streamspike.com</li>
                         <li>traviswylie58@gmail.com</li>

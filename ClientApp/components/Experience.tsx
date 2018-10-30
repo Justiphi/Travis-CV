@@ -13,7 +13,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                     <thead>
                         <tr>
                             <th>
-                                Job
+                                Project
                             </th>
                             <th>
                                 Type
@@ -141,6 +141,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                         </tr>
                     </tbody>
                 </table>
+                <strong>Note:</strong> all MySQL databases, coded websites and the Tatenashi Discord bot on Debian 9 virtual private servers.
             </div>
         </div>
     }

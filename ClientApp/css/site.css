@@ -60,7 +60,7 @@ body{
     margin: 40px 20px 20px 20px;
 }
 .portrait{
-    max-width:70%;
+    max-width:60%;
 }
 .imgdiv{
     text-align:center;
@@ -71,6 +71,10 @@ body{
     body {
         padding-top: 50px;
     }
+
+    .portrait {
+        max-width: 40%;
+    }
 }
 
 @media (min-width: 768px) {
@@ -79,6 +83,7 @@ body{
         height: 100%;
         width: calc(25% - 20px);
     }
+
     .main-nav .navbar {
         border-radius: 0;
         border-width: 0;

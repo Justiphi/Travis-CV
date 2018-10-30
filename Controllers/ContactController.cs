@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebCv.Models;
 
 namespace WebCv.Controllers
 {
@@ -13,7 +14,7 @@ namespace WebCv.Controllers
     {
         [Route("contact")]
         [HttpPost]
-        public ActionResult NewContact(string test)
+        public ActionResult NewContact(ContactModel test)
         {
             return Content("Success!");
         }

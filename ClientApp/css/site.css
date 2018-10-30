@@ -52,6 +52,12 @@ body{
     padding: 5px;
     margin: 40px 20px 20px 20px;
 }
+.portrait{
+    max-width:70%;
+}
+.imgdiv{
+    text-align:center;
+}
 
 @media (max-width: 767px) {
     /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */

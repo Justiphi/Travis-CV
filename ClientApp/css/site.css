@@ -5,7 +5,8 @@
 }
 
 html {
-    background-color: var(--primaryColour);
+    /*background-color: var(--textColour);*/
+    background-image: url(../images/code.jpg);
 }
 
 hr {
@@ -37,6 +38,11 @@ hr {
 
 body{
     background-color: transparent;
+    min-height:100vh;
+}
+
+.content{
+    background-color: var(--primaryColour);
     min-height:100vh;
 }
 

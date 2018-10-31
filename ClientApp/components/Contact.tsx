@@ -63,31 +63,33 @@ export class Contact extends React.Component<RouteComponentProps<{}>, AddContact
     private renderCreateForm() {
         return (
             <form onSubmit={this.handleSave} >
-                < div className="form-group row" >
-                    <label className=" control-label col-md-12" htmlFor="Name">Name</label>
-                    <div className="col-md-4">
-                        <input className="form-control" type="text" name="Name" defaultValue={this.state.conData.Name} required />
-                    </div>
-                </div >
-                <div className="form-group row">
-                    <label className="control-label col-md-12" htmlFor="Email">Email</label>
-                    <div className="col-md-4">
-                        <input className="form-control" type="text" name="Email" defaultValue={this.state.conData.Email} required />
-                    </div>
-                </div >
-                <div className="form-group row">
+                <div className='col-md-12 row justify-content-md-center'>
+                    < div className="form-group col-md-6 col-sm-12" >
+                        <label className=" control-label col-md-12" htmlFor="Name">Name</label>
+                        <div className="col-md-12">
+                            <input className="form-control" type="text" name="Name" defaultValue={this.state.conData.Name} required />
+                        </div>
+                    </div >
+                    <div className="form-group col-md-6 col-sm-12">
+                        <label className="control-label col-md-12" htmlFor="Email">Email</label>
+                        <div className="col-md-12">
+                            <input className="form-control" type="text" name="Email" defaultValue={this.state.conData.Email} required />
+                        </div>
+                    </div >
+                </div>
+                <div className="form-group col-md-12">
                     <label className="control-label col-md-12" htmlFor="Subject" >Subject</label>
-                    <div className="col-md-4">
+                    <div className="col-md-12">
                         <input className="form-control" type="text" name="Subject" defaultValue={this.state.conData.Subject} required />
                     </div>
                 </div>
-                <div className="form-group row">
+                <div className="form-group col-md-12">
                     <label className="control-label col-md-12" htmlFor="Content">Content</label>
-                    <div className="col-md-4">
+                    <div className="col-md-12">
                         <input className="form-control" type="text" name="Content" defaultValue={this.state.conData.Content} required />
                     </div>
                 </div >
-                <div className="form-group">
+                <div className="form-group text-center">
                     <button type="submit" className="btn btn-default">Send</button>
                 </div >
             </form >

@@ -11,6 +11,7 @@ export class Header extends React.Component<{}, {}> {
                         <div>Software Developer</div>
                         <div>Student</div>
                         <div>Web Developer</div>
+                        <div>Freelancer</div>
                     </TextLoop>
                 </h2>
             </div>

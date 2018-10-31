@@ -5,10 +5,10 @@ export class Home extends React.Component<RouteComponentProps<{}>, {}> {
     public render() {
         return <div className="col-md-10">
             <div className="row">
-                <div className="col-md-3 imgdiv">
+                <div className="col-md-4 imgdiv">
                     <img src={require('../images/Travis.jpg')} alt="Travis Wylie" className='portrait' />
                 </div>
-                <div className="col-md-9 col-sm-12">
+                <div className="col-md-8 col-sm-12">
                     <p>Hi, My name's Travis. I'm a developer based in Tauranga, New Zealand.</p> <br />
                     <p>I develop both software and websites and have a diverse set of skills encompassing many languages and frameworks.</p> <br />
                     <p>I mainly devleop in C# using dotnet core however I am open to learning new languages and frameworks.</p> <br />

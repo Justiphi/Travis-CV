@@ -12,6 +12,9 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+#Email configuration file
+_config.json
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -185,7 +188,6 @@ ClientBin/
 orleans.codegen.cs
 
 /node_modules
-!/node_modules/@types/react-text-loop/*
 
 # RIA/Silverlight projects
 Generated_Code/

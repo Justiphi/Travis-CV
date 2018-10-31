@@ -9,14 +9,14 @@ using WebCv.Models;
 namespace WebCv.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Contact")]
+    [Route("api/contact")]
     public class ContactController : Controller
     {
-        [Route("contact")]
+        [Route("newcontact")]
         [HttpPost]
-        public ActionResult NewContact(ContactModel test)
+        public int NewContact(ContactModel details)
         {
-            return Content("Success!");
+            return Contact.SendEmail(details);
         }
     }
 }

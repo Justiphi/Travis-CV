@@ -8,7 +8,6 @@ namespace WebCv.Models
 {
     public class ContactModel
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Subject { get; set; }
@@ -16,23 +15,42 @@ namespace WebCv.Models
     }
     public class Contact
     {
-        public static void SendEmail(ContactModel details)
+        public static SmtpClient smtpClient;
+        public static int SendEmail(ContactModel details)
         {
-            SmtpClient smtpClient = new SmtpClient("streamspike.com", 25);
+            try
+            {
+                MailMessage mail = new MailMessage();
 
-            smtpClient.Credentials = new System.Net.NetworkCredential("info@MyWebsiteDomainName.com", "myIDPassword"); //TODO:add credentials in config file (add file to gitignore)
-            smtpClient.UseDefaultCredentials = true;
+                //Setting From , To and CC
+                mail.From = new MailAddress("travis@streamspike.com", details.Name);
+                mail.To.Add("traviswylie58@gmail.com");
+                mail.Subject = details.Subject;
+                mail.Body = $"From: {details.Email} \n {details.Content}";
+                mail.IsBodyHtml = true;
+
+                smtpClient.Send(mail);
+
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public static void startSmtp()
+        {
+            string password = "placeholder"; //TODO: add password config file (add file to gitignore)
+
+            if (smtpClient == null)
+            {
+                smtpClient = new SmtpClient("streamspike.com", 587);
+            }
+
+            smtpClient.Credentials = new System.Net.NetworkCredential("travis@streamspike.com", password); 
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtpClient.EnableSsl = true;
-            MailMessage mail = new MailMessage();
-
-            //Setting From , To and CC
-            mail.From = new MailAddress(details.Email, details.Name);
-            mail.To.Add(new MailAddress("travis@streamspike.com"));
-            mail.Subject = details.Subject;
-            mail.Body = details.Content;
-
-            smtpClient.Send(mail);
+            smtpClient.Timeout = 1000000;
         }
     }
 }

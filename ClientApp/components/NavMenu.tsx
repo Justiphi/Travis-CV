@@ -4,48 +4,46 @@ import { Link, NavLink } from 'react-router-dom';
 export class NavMenu extends React.Component<{}, {}> {
     public render() {
         return <div className='main-nav'>
-            <div className='navbar navbar-inverse'>
-                <div className='navbar-header'>
-                    <button type='button' className='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
-                        <span className='sr-only'>Toggle navigation</span>
-                        <span className='icon-bar'></span>
-                        <span className='icon-bar'></span>
-                        <span className='icon-bar'></span>
+            <div className='navbar navbar-expand-md navbar-dark bg-dark'>
+                <div className='navbar-brand'>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
                     <Link className='navbar-brand' to={ '/' }>Travis Wylie</Link>
                 </div>
                 <div className='clearfix'></div>
-                <div className='navbar-collapse collapse'>
-                    <ul className='nav navbar-nav'>
-                        <li>
-                            <NavLink to={ '/' } exact activeClassName='active'>
-                                <span className='glyphicon glyphicon-home'></span> Home
+                <div className='navbar-collapse collapse' id="navbarsExampleDefault">
+                    <ul className='nav navbar-nav mr-auto'>
+                        <li className='nav-item'>
+                            <NavLink to={'/'} className='nav-link' exact activeClassName='active'>
+                                <span className='glyphicon glyphicon-home col-sm-12'></span> Home
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink to={ '/education' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-education'></span> Education
+                        <li className='nav-item'>
+                            <NavLink to={'/education'} className='nav-link' activeClassName='active'>
+                                <span className='glyphicon glyphicon-education col-sm-12'></span> Education
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink to={'/experience'} activeClassName='active'>
-                                <span className='glyphicon glyphicon-education'></span> Experience
+                        <li className='nav-item'>
+                            <NavLink to={'/experience'} className='nav-link' activeClassName='active'>
+                                <span className='glyphicon glyphicon-education col-sm-12'></span> Experience
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink to={ '/contact' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-envelope'></span> Contact Me
+                        <li className='nav-item'>
+                            <NavLink to={'/contact'} className='nav-link' activeClassName='active'>
+                                <span className='glyphicon glyphicon-envelope col-sm-12'></span> Contact Me
                             </NavLink>
-                        </li>
+                        </li >
                         <hr />
-                        <li>
-                            <a href='https://github.com/justiphi'>
-                                <span className='glyphicon glyphicon-user'></span> Github
+                        <li className='nav-item'>
+                            <a href='https://github.com/justiphi' className='nav-link'>
+                                <span className='glyphicon glyphicon-user col-sm-12'></span> Github
                             </a>
                         </li>
-                        <li>
-                            <a href='https://www.linkedin.com/in/travis-wylie-9b1129154/'>
-                                <span className='glyphicon glyphicon-user'></span> LinkedIn
+                        <li className='nav-item'>
+                            <a href='https://www.linkedin.com/in/travis-wylie-9b1129154/' className='nav-link'>
+                                <span className='glyphicon glyphicon-user col-sm-12'></span> LinkedIn
                             </a>
                         </li>
                     </ul>

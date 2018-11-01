@@ -6,7 +6,6 @@
 
 html {
     /*background-color: var(--textColour);*/
-    background-image: url(../images/code.jpg);
     background-size:contain;
     min-width:330px;
 }

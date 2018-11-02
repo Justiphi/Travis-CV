@@ -76,6 +76,9 @@ body{
 .imgdiv{
     text-align:center;
 }
+.nav-item{
+    width:100%;
+}
 
 @media (max-width: 767px) {
     /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
@@ -95,8 +98,11 @@ body{
 @media (min-width: 768px) {
     /* On small screens, convert the nav menu to a vertical sidebar */
     .main-nav {
-        height: 100%;
+        height: 100vh;
         width: 20%;
+    }
+    heading{
+        padding-top:20px;
     }
 
     .main-nav .navbar {

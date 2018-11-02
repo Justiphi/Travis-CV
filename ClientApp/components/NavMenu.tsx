@@ -3,18 +3,20 @@ import { Link, NavLink } from 'react-router-dom';
 
 export class NavMenu extends React.Component<{}, {}> {
     public render() {
-        return <div className='main-nav'>
-            <div className='navbar navbar-expand-md navbar-dark bg-dark'>
-                <div className='navbar-brand'>
+        return <div className='main-nav bg-dark'>
+            <div className='navbar-expand-md navbar-dark bg-dark'>
+                <div>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <Link className='navbar-brand' to={ '/' }>Travis Wylie</Link>
+                    <div className='text-center heading'>
+                        <Link className='navbar-brand' to={'/'}>Travis Wylie</Link>
+                    </div>
                 </div>
                 <div className='clearfix'></div>
-                <div className='navbar-collapse collapse' id="navbarsExampleDefault">
-                    <ul className='nav navbar-nav mr-auto'>
+                <div className='navbar-collapse collapse navbar' id="navbarsExampleDefault">
+                    <ul className='nav navbar navbar-nav mr-auto'>
                         <li className='nav-item'>
                             <NavLink to={'/'} className='nav-link' exact activeClassName='active'>
                                 <span className='glyphicon glyphicon-home col-sm-12'></span> Home

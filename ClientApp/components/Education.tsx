@@ -89,7 +89,7 @@ export class Education extends React.Component<RouteComponentProps<{}>, {}> {
                 <ul>
                     <li>Project Ignite (2017)</li>
                 </ul>
-            </div>;
+            </div>
         </div>
     }
 }

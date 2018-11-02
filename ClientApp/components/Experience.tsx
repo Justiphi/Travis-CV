@@ -81,7 +81,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                     ASP.net Core <br />(MVC model)
                                 </td>
                                 <td>
-                                    <a href='https://github.com/Justiphi/Cme-Website'>Github Repo</a>
+                                    <a href='https://github.com/Justiphi/Cme-Website'>(Github)</a>
                                 </td>
                             </tr>
                             <tr>
@@ -138,7 +138,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                     .net core <br /> local SQLite database connected via Entity Framework
                                 </td>
                                 <td>
-                                    <a href='https://github.com/Justiphi/Tatenashi'>(Github Repo)</a>
+                                    <a href='https://github.com/Justiphi/Tatenashi'>(Github)</a>
                                 </td>
                             </tr>
                         </tbody>

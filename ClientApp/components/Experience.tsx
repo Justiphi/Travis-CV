@@ -128,7 +128,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                             </tr>
                             <tr>
                                 <td>
-                                    Tatenashi
+                                    Tatenashi <br />
                                     <a href='https://discord.gg/gS6zZ3B'>(Demo)</a>
                                 </td>
                                 <td>

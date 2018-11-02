@@ -5,7 +5,7 @@ export class NavMenu extends React.Component<{}, {}> {
     public render() {
         return <div className='main-nav bg-dark'>
             <div className='navbar-expand-md navbar-dark bg-dark'>
-                <div>
+                <div className='row nav-responsive'>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>

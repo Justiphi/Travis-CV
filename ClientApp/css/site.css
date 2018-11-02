@@ -79,11 +79,24 @@ body{
 .nav-item{
     width:100%;
 }
+.nav-responsive{
+    padding: 10px;
+    padding-left:30px;
+    width:100%;
+}
+.heading{
+    width:100%;
+    text-align:center;
+}
 
 @media (max-width: 767px) {
     /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
     body {
         padding-top: 50px;
+    }
+    .navbar{
+        width:100%;
+        text-align:center;
     }
 
     .portrait {
@@ -92,6 +105,12 @@ body{
 
     .content {
         background-color: var(--primaryColour);
+    }
+    .navbg{
+        width:100vw;
+    }
+    .navbar-toggler{
+        position:fixed;
     }
 }
 

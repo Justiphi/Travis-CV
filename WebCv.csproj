@@ -50,9 +50,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ClientApp\images\code.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="ClientApp\images\Travis.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -6,8 +6,9 @@
 
 html {
     /*background-color: var(--textColour);*/
-    background-size: cover;
-    min-width:330px;
+    background-image: url('https://images.pexels.com/photos/247791/pexels-photo-247791.png?cs=srgb&dl=ai-codes-coding-247791.jpg&fm=jpg');
+    background-size: contain;
+    min-width: 330px;
 }
 
 hr {

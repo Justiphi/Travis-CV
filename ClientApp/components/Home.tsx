@@ -22,6 +22,13 @@ export class Home extends React.Component<RouteComponentProps<{}>, {}> {
                 <p>The site is currently running on a virtual private server that I have set up with Debian 9 using Apache2 as the webserver for both this site and < a href = 'https://tatenashi.com' > tatenashi.com</a >.</p > <br />
                 <p>As I improve my skills with ASP.net and React I will be updating this site to include such things as a contact form running through my mail server.</p >
             </div>
+            <div className='col-md-12'>
+                <h2>My CV:</h2>
+                <p>A copy of my paper CV can be viewed and downloaded by clicking the button below.</p>
+                <a className='btn btn-primary' href='https://drive.google.com/file/d/1tDHiBeaDQXg8N4GZfSC6oSyP4ae8egjP/view?usp=sharing'>
+                    My CV
+                </a>
+            </div>
         </div>
     }
 }

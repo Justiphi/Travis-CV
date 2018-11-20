@@ -135,7 +135,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                     Discord Chatbot
                                 </td>
                                 <td>
-                                    .net core <br /> local SQLite database connected via Entity Framework
+                                    .net core <br /> MySQL database connected via Entity Framework*
                                 </td>
                                 <td>
                                     <a href='https://github.com/Justiphi/Tatenashi'>(Github)</a>
@@ -145,6 +145,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                     </table>
                 </div>
                 <strong>Note:</strong> all MySQL databases, coded websites and the Tatenashi Discord bot on Debian 9 virtual private servers.
+                <p>*The Tatenashi discord bot originally had a local SQLite database and was migrated to MySQL on 20/11/2018</p>
             </div>
         </div>
     }

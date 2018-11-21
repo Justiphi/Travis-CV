@@ -16,6 +16,11 @@ export class Home extends React.Component<RouteComponentProps<{}>, {}> {
                 </div>
             </div>
             <div className='col-md-12'>
+                <p> I primarily enjoy coding back end and more functional code however, I am capable of coding the front end of applications too. <br />
+                    My passion is to use my programming skills to bring people together by means of helping them communicate and collaborate through software such as web applications, chat bots and desktop applications.</p> <br />
+                <p>I have taken on many projects with different people and worked with a variety of methodologies including Waterfall and Agile.</p>
+            </div>
+            <div className='col-md-12'>
                 <h2>About this site:</h2>
                 <p>I have made this portfolio using a mixture of TypeScript and C#.</p> <br />
                 <p>The front end has been made using React while the back end is using ASP.net Core, the code for this portfolio can be found on my <a href='https://github.com/Justiphi/Travis-CV'>Github</a>.</p> <br />

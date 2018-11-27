@@ -123,7 +123,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                     WPF .net Framework <br />MySQL database connected via Entity Framework
                                 </td>
                                 <td>
-                                    To upload pending completion
+                                    <a href='https://github.com/Justiphi/Business-Manager'>(Github)</a>
                                 </td>
                             </tr>
                             <tr>

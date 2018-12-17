@@ -95,7 +95,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                     PHP (with MVC model) <br />MySQL database
                                 </td>
                                 <td>
-                                    To upload pending fix
+                                    Available on Request
                                 </td>
                             </tr>
                             <tr>
@@ -109,7 +109,7 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
                                     WPF .net Framework
                                 </td>
                                 <td>
-                                    To upload
+                                    Available on Request
                                 </td>
                             </tr>
                             <tr>

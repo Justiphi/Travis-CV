@@ -36,6 +36,7 @@ export class Education extends React.Component<RouteComponentProps<{}>, {}> {
                         </tbody>
                     </table>
                 </div>
+                <br />
                 <h2> Qualifications: </h2>
                 <div className='table-responsive'>
                     <table className='table'>

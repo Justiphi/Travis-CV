@@ -156,4 +156,7 @@ body{
         overflow: hidden;
         text-overflow: ellipsis;
     }
+    .menuIcon{
+        display: none;
+    }
 }

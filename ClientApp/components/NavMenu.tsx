@@ -19,33 +19,33 @@ export class NavMenu extends React.Component<{}, {}> {
                     <ul className='nav navbar navbar-nav mr-auto'>
                         <li className='nav-item'>
                             <NavLink to={'/'} className='nav-link' exact activeClassName='active'>
-                                <span className='glyphicon glyphicon-home col-sm-12'></span> Home
+                                Home
                             </NavLink>
                         </li>
                         <li className='nav-item'>
                             <NavLink to={'/education'} className='nav-link' activeClassName='active'>
-                                <span className='glyphicon glyphicon-education col-sm-12'></span> Education
+                                Education
                             </NavLink>
                         </li>
                         <li className='nav-item'>
                             <NavLink to={'/experience'} className='nav-link' activeClassName='active'>
-                                <span className='glyphicon glyphicon-education col-sm-12'></span> Experience
+                                Experience
                             </NavLink>
                         </li>
                         <li className='nav-item'>
                             <NavLink to={'/contact'} className='nav-link' activeClassName='active'>
-                                <span className='glyphicon glyphicon-envelope col-sm-12'></span> Contact Me
+                                Contact Me
                             </NavLink>
                         </li >
                         <hr />
                         <li className='nav-item'>
                             <a href='https://github.com/justiphi' className='nav-link'>
-                                <span className='glyphicon glyphicon-user col-sm-12'></span> Github
+                                Github
                             </a>
                         </li>
                         <li className='nav-item'>
                             <a href='https://www.linkedin.com/in/travis-wylie-9b1129154/' className='nav-link'>
-                                <span className='glyphicon glyphicon-user col-sm-12'></span> LinkedIn
+                                LinkedIn
                             </a>
                         </li>
                     </ul>

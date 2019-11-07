@@ -16,16 +16,9 @@ namespace WebCv.Models
         public string Content { get; set; }
     }
 
-    public class EmailModel
-    {
-        public string Email { get; set; }
-        public string EmailPassword { get; set; }
-        public string MailServer { get; set; }
-    }
-
     public class Contact
     {
-        public static EmailModel email;
+        public static ConfigModel email;
         public static SmtpClient smtpClient;
         public static int SendEmail(ContactModel details)
         {
@@ -36,6 +29,7 @@ namespace WebCv.Models
                 //Setting From , To and CC
                 mail.From = new MailAddress(email.Email, details.Name);
                 mail.To.Add("traviswylie58@gmail.com");
+                mail.CC.Add("travis@streamspike.com");
                 mail.Subject = details.Subject;
                 mail.Body = $"From: {details.Email} \n {details.Content}";
                 mail.IsBodyHtml = true;
@@ -46,7 +40,7 @@ namespace WebCv.Models
             }
             catch
             {
-                throw;
+                return 0;
             }
         }
 
@@ -73,7 +67,7 @@ namespace WebCv.Models
                 throw new ApplicationException("Unable to locate the _config.json file.");
             }
 
-            email = JsonConvert.DeserializeObject<EmailModel>(File.ReadAllText(file));
+            email = JsonConvert.DeserializeObject<ConfigModel>(File.ReadAllText(file));
         }
     }
 }

@@ -15,6 +15,7 @@ namespace WebCv
         public static void Main(string[] args)
         {
             Models.Contact.startSmtp();
+            Models.DatabaseModel.configureDB();
             BuildWebHost(args).Run();
         }
 

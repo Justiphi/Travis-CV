@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace WebCv.Models
 {
@@ -28,12 +29,12 @@ namespace WebCv.Models
 
         public static List<Qualification> getEducation()
         {
-            string sqlString = "SELECT * FROM Qualifications ORDER BY StudyYear DSC;";
+            string sqlString = "SELECT * FROM Qualifications;";
             List<Qualification> qualifications = new List<Qualification>();
-            SqlConnection connection = new SqlConnection(connectionString);
+            MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
-            SqlCommand command = new SqlCommand(sqlString, connection);
-            using( SqlDataReader reader = command.ExecuteReader())
+            MySqlCommand command = new MySqlCommand(sqlString, connection);
+            using(MySqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
@@ -55,10 +56,10 @@ namespace WebCv.Models
         {
             string sqlString = "SELECT * FROM Notes;";
             List<Notes> notes = new List<Notes>();
-            SqlConnection connection = new SqlConnection(connectionString);
+            MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
-            SqlCommand command = new SqlCommand(sqlString, connection);
-            using (SqlDataReader reader = command.ExecuteReader())
+            MySqlCommand command = new MySqlCommand(sqlString, connection);
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
@@ -77,10 +78,10 @@ namespace WebCv.Models
         {
             string sqlString = "SELECT * FROM Experience;";
             List<Experience> projects = new List<Experience>();
-            SqlConnection connection = new SqlConnection(connectionString);
+            MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
-            SqlCommand command = new SqlCommand(sqlString, connection);
-            using (SqlDataReader reader = command.ExecuteReader())
+            MySqlCommand command = new MySqlCommand(sqlString, connection);
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
@@ -89,6 +90,7 @@ namespace WebCv.Models
                         ID = Convert.ToInt32(reader["ID"]),
                         Project = (string)reader["Project"],
                         Type = (string)reader["Type"],
+                        Link = (string)reader["Link"],
                         Technology = (string)reader["Technology"],
                         GithubLink = (string)reader["GithubLink"]
                     });
@@ -113,6 +115,7 @@ namespace WebCv.Models
             "CREATE TABLE IF NOT EXISTS Experience(" +
             "ID int(11) NOT NULL AUTO_INCREMENT," +
             "Project text(50)," +
+            "Link Text(50)," +
             "Type text(30)," +
             "Technology text(50)," +
             "GithubLink text(100)," +
@@ -124,9 +127,9 @@ namespace WebCv.Models
             "PRIMARY KEY(ID)" +
             ");";
 
-            SqlConnection connection = new SqlConnection(connectionString);
+            MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
-            SqlCommand command = new SqlCommand(sqlString, connection);
+            MySqlCommand command = new MySqlCommand(sqlString, connection);
             command.ExecuteNonQuery();
             connection.Close();
         }
@@ -145,6 +148,7 @@ namespace WebCv.Models
     {
         public int ID { get; set; }
         public string Project { get; set; }
+        public string Link { get; set; }
         public string Type { get; set; }
         public string Technology { get; set; }
         public string GithubLink { get; set; }

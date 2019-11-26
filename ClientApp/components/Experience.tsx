@@ -1,8 +1,108 @@
 ﻿import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 
-export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
+interface ExperienceState{
+    experience: Project[];
+    notes: Note[];
+    loadingExp: boolean;
+    loadingNotes: boolean;
+}
+
+export class Experience extends React.Component<RouteComponentProps<{}>, ExperienceState> {
+
+    constructor() {
+        super();
+        this.state = { experience: [], notes: [], loadingExp: true, loadingNotes: true };
+
+        fetch('api/values/getexperience')
+            .then(response => response.json() as Promise<Project[]>)
+            .then(data => {
+                this.setState({ experience: data, loadingExp: false });
+            });
+
+        fetch('api/values/getnotes')
+            .then(response => response.json() as Promise<Note[]>)
+            .then(data => {
+                this.setState({ notes: data, loadingNotes: false });
+            });
+    }
+
+    static ProjectTitle(title, link) {
+        if (link != 'null') {
+            return (
+                <td>
+                    <a href={link}>{title}</a>
+                </td>
+            );
+        }
+        else {
+            return (
+                <td>
+                    {title}
+                </td>
+            );
+        }
+    }
+
+    static ProjectGithub(Github) {
+        if (Github.startsWith('https://')) {
+            return (
+                <td>
+                    <a href={Github}>(Github)</a>
+                </td>
+            );
+        }
+        else {
+            return (
+                <td>
+                    {Github}
+                </td>
+            );
+        }
+    }
+
+    static renderTable(experience) {
+        return (
+            <tbody>
+                {experience.map(item =>
+                    <tr key={item.ID} >
+                        {this.ProjectTitle(item.project, item.link)}
+                        <td>
+                            {item.type}
+                        </td>
+                        <td>
+                            {item.technology}
+                        </td>
+                        {this.ProjectGithub(item.githubLink)}
+                    </tr>
+                )}
+            </tbody>
+        );
+    }
+
+    static renderNotes(notes) {
+        return (
+            <tbody>
+                {notes.map(item =>
+                    <p>
+                        {item.note}
+                    </p>
+                )}
+            </tbody>
+        );
+    }
+
+
     public render() {
+
+        let expContents = this.state.loadingExp
+            ? <p><em>Loading...</em></p>
+            : Experience.renderTable(this.state.experience);
+
+        let noteContents = this.state.loadingNotes
+            ? <p><em>Loading...</em></p>
+            : Experience.renderNotes(this.state.notes);
+
         return <div className="col-md-8">
             <div>
                 <h1>Experience</h1>
@@ -10,143 +110,43 @@ export class Experience extends React.Component<RouteComponentProps<{}>, {}> {
             </div>
             <div>
                 <div className='table-responsive'>
-                    <table className='table'>
+                    <table className='table table-striped'>
                         <thead>
                             <tr>
-                                <th>
-                                    Project
-                                </th>
-                                <th>
-                                    Type
-                                </th>
-                                <th>
-                                    Technologies Used
-                                </th>
-                                <th>
-                                    Github
-                                </th>
+                            <th>
+                                Project
+                            </th>
+                            <th>
+                                Type
+                            </th>
+                            <th>
+                                Technologies Used
+                            </th>
+                            <th>
+                                Github
+                            </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <a href='https://www.bioptronlight.co.nz/'>bioptronlight.co.nz</a>
-                                </td>
-                                <td>
-                                    Website <br />(freelance)
-                                </td>
-                                <td>
-                                    Wix
-                                </td>
-                                <td>
-                                    not applicable
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href='https://janicegilesart.com'>janicegilesart.com</a>
-                                </td>
-                                <td>
-                                    Website <br />(freelance)
-                                </td>
-                                <td>
-                                    Wix
-                                </td>
-                                <td>
-                                    not applicable
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href='https://oneuniqueminds.co.nz'>oneuniqueminds.co.nz</a>
-                                </td>
-                                <td>
-                                    Website <br />(freelance)
-                                </td>
-                                <td>
-                                    PHP (with MVC model) <br />MySQL database
-                                </td>
-                                <td>
-                                    unavailable
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href='http://cmeonline.co'>cmeonline.co</a>
-                                </td>
-                                <td>
-                                    Website <br />(Startup weekend)
-                                </td>
-                                <td>
-                                    ASP.net Core <br />(MVC model)
-                                </td>
-                                <td>
-                                    <a href='https://github.com/Justiphi/Cme-Website'>(Github)</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href='https://tatenashi.com'>tatenashi.com</a>
-                                </td>
-                                <td>
-                                    Website
-                                </td>
-                                <td>
-                                    PHP (with MVC model) <br />MySQL database
-                                </td>
-                                <td>
-                                    Available on Request
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Kitchen hand request system <br />(discontinued)
-                                </td>
-                                <td>
-                                    Desktop application
-                                </td>
-                                <td>
-                                    WPF .net Framework
-                                </td>
-                                <td>
-                                    Available on Request
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Database management tool for business
-                                </td>
-                                <td>
-                                    Desktop application
-                                </td>
-                                <td>
-                                    WPF .net Framework <br />MySQL database connected via Entity Framework
-                                </td>
-                                <td>
-                                    <a href='https://github.com/Justiphi/Business-Manager'>(Github)</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Tatenashi <br />
-                                    <a href='https://discord.gg/gS6zZ3B'>(Demo)</a>
-                                </td>
-                                <td>
-                                    Discord Chatbot
-                                </td>
-                                <td>
-                                    .net core <br /> MySQL database connected via Entity Framework*
-                                </td>
-                                <td>
-                                    <a href='https://github.com/Justiphi/Tatenashi'>(Github)</a>
-                                </td>
-                            </tr>
-                        </tbody>
+                        {expContents}
                     </table>
                 </div>
-                <strong>Note:</strong> all MySQL databases, coded websites and the Tatenashi Discord bot on Debian 9 virtual private servers.
-                <p>*The Tatenashi discord bot originally had a local SQLite database and was migrated to MySQL on 20/11/2018</p>
+                <strong>Notes:</strong>
+                {noteContents}
             </div>
         </div>
     }
+}
+
+interface Project {
+    id: number;
+    project: string;
+    link: string;
+    type: string;
+    technology: string;
+    githubLink: string;
+}
+
+interface Note {
+    id: number;
+    note: string;
 }

@@ -10,16 +10,17 @@ export class ContactData {
 
 interface AddContactDataState {
     conData: ContactData;
+    conSent: boolean;
 }
 export class Contact extends React.Component<RouteComponentProps<{}>, AddContactDataState> {
     constructor(props) {
         super(props);
-        this.state = {conData: new ContactData };
+        this.state = { conData: new ContactData, conSent: false };
         // This binding is necessary to make "this" work in the callback  
         this.handleSave = this.handleSave.bind(this);
     }
     public render() {
-        let contents = this.renderCreateForm();
+        let contents = this.state.conSent ? this.renderSentBox() : this.renderCreateForm();
         return <div className='col-md-10'>
             <h1>Contact</h1>
             If you have any questions or would like to request some code samples feel free to contact me by the following methods:
@@ -40,7 +41,6 @@ export class Contact extends React.Component<RouteComponentProps<{}>, AddContact
                 </div>
             </div>
             <br />
-            <h2>Contact Me</h2>
             {contents}
         </div>;
     }
@@ -48,21 +48,19 @@ export class Contact extends React.Component<RouteComponentProps<{}>, AddContact
     private handleSave(event) {
         event.preventDefault();
         const data = new FormData(event.target);
+        this.setState({conSent: true });
         // POST request for Contact. 
         fetch('api/contact/newcontact', {
             method: 'POST',
             body: data,
-        }).then((response) => response.json())
-            .then((responseJson) => {
-                alert("Message sent. Thank you for contacting me.")
-                this.props.history.push("/contact");
-            })
+        });
     }
 
     // Returns the HTML Form to the render() method.  
     private renderCreateForm() {
         return (
             <form onSubmit={this.handleSave} >
+                <h2>Contact Me</h2>
                 <div className='col-md-12 row justify-content-md-center'>
                     < div className="form-group col-md-6 col-sm-12" >
                         <label className=" control-label col-md-12" htmlFor="Name">Name</label>
@@ -93,6 +91,14 @@ export class Contact extends React.Component<RouteComponentProps<{}>, AddContact
                     <button type="submit" className="btn btn-default">Send</button>
                 </div >
             </form >
+        )
+    }
+
+    private renderSentBox() {
+        return (
+            <div className='col-md-12 row justify-content-md-center'>
+                <h2>Message sent. Thank you for contacting me.</h2>
+            </div >
         )
     }
 }

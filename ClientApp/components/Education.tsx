@@ -1,8 +1,76 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 
-export class Education extends React.Component<RouteComponentProps<{}>, {}> {
+interface EducationState {
+    education: Qualification[];
+    loadingEdu: boolean;
+}
+
+export class Education extends React.Component<RouteComponentProps<{}>, EducationState> {
+
+    constructor() {
+        super();
+        this.state = { education: [], loadingEdu: true};
+
+        fetch('api/values/geteducation')
+            .then(response => response.json() as Promise<Qualification[]>)
+            .then(data => {
+                this.setState({ education: data, loadingEdu: false });
+            });
+    }
+
+    static renderCurrent(allEducation) {
+        let education = allEducation.filter(x => !x.completed);
+        return (
+            <tbody>
+                {education.map(item =>
+                    <tr key={item.ID} >
+                        <td>
+                            {item.title}
+                        </td>
+                        <td>
+                            {item.location}
+                        </td>
+                        <td>
+                            {item.studyYear}
+                        </td>
+                    </tr>
+                )}
+            </tbody>
+        );
+    }
+
+    static renderComplete(allEducation) {
+        let education = allEducation.filter(x => x.completed);
+        return (
+            <tbody>
+                {education.map(item =>
+                    <tr key={item.ID} >
+                        <td>
+                            {item.title}
+                        </td>
+                        <td>
+                            {item.location}
+                        </td>
+                        <td>
+                            {item.studyYear}
+                        </td>
+                    </tr>
+                )}
+            </tbody>
+        );
+    }
+
     public render() {
+
+        let completeContents = this.state.loadingEdu
+            ? <p><em>Loading...</em></p>
+            : Education.renderComplete(this.state.education);
+
+        let incompleteContents = this.state.loadingEdu
+            ? <p><em>Loading...</em></p>
+            : Education.renderCurrent(this.state.education);
+
         return <div>
             <div className="col-md-8">
             <h2> Currently Studying: </h2>
@@ -21,19 +89,7 @@ export class Education extends React.Component<RouteComponentProps<{}>, {}> {
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    BSc Major in Applied Computing
-                                </td>
-                                <td>
-                                    University of Waikato
-                                </td>
-                                <td>
-                                    2019
-                                </td>
-                            </tr>
-                        </tbody>
+                        {incompleteContents}
                     </table>
                 </div>
                 <br />
@@ -53,52 +109,7 @@ export class Education extends React.Component<RouteComponentProps<{}>, {}> {
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Diploma in Software Development Level 6
-                                </td>
-                                <td>
-                                    Toi Ohomai Institute of Technology
-                                </td>
-                                <td>
-                                    2018
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Skills for Entrepeneurs Level 7
-                                </td>
-                                <td>
-                                    Toi Ohomai Institute of Technology
-                                </td>
-                                <td>
-                                    2018
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Diploma in Applied Computing Level 5
-                                </td>
-                                <td>
-                                    Toi Ohomai Institute of Technology
-                                </td>
-                                <td>
-                                    2017
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    NCEA Level 3
-                                </td>
-                                <td>
-                                    Otumoetai College
-                                </td>
-                                <td>
-                                    2016
-                                </td>
-                            </tr>
-                        </tbody>
+                        {completeContents}
                     </table>
                 </div>
                 <br />
@@ -109,4 +120,12 @@ export class Education extends React.Component<RouteComponentProps<{}>, {}> {
             </div>
         </div>
     }
+}
+
+interface Qualification {
+    id: number;
+    title: string;
+    location: string;
+    studyYear: string;
+    completed: boolean;
 }

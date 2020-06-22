@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
+import { render } from 'react-dom';
 
 interface EducationState {
     education: Qualification[];
@@ -21,37 +22,41 @@ export class Education extends React.Component<RouteComponentProps<{}>, Educatio
 
     static renderCurrent(allEducation) {
         let education = allEducation.filter(x => !x.completed);
-        return (
-            <div>
-                <h2> Currently Studying: </h2>
-                <div className='table-responsive'>
-                    <table className='table'>
-                        <thead>
-                            <tr>
-                                <th>Qualification</th>
-                                <th>Studying at</th>
-                                <th>Year</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {education.map(item =>
-                                <tr key={item.ID} >
-                                    <td>
-                                        {item.title}
-                                    </td>
-                                    <td>
-                                        {item.location}
-                                    </td>
-                                    <td>
-                                        {item.studyYear}
-                                    </td>
+        if (education.length > 0) {
+            return (
+                <div>
+                    <h2> Currently Studying: </h2>
+                    <div className='table-responsive'>
+                        <table className='table'>
+                            <thead>
+                                <tr>
+                                    <th>Qualification</th>
+                                    <th>Studying at</th>
+                                    <th>Year</th>
                                 </tr>
-                            )}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {education.map(item =>
+                                    <tr key={item.ID} >
+                                        <td>
+                                            {item.title}
+                                        </td>
+                                        <td>
+                                            {item.location}
+                                        </td>
+                                        <td>
+                                            {item.studyYear}
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        } else {
+            return
+        }
     }
 
     static renderComplete(allEducation) {

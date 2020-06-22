@@ -88,7 +88,7 @@ export class Contact extends React.Component<RouteComponentProps<{}>, AddContact
                     </div>
                 </div >
                 <div className="form-group text-center">
-                    <button type="submit" className="btn btn-default">Send</button>
+                    <button type="submit" className="btn btn-primary">Send</button>
                 </div >
             </form >
         )

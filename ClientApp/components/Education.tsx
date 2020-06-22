@@ -10,7 +10,7 @@ export class Education extends React.Component<RouteComponentProps<{}>, Educatio
 
     constructor() {
         super();
-        this.state = { education: [], loadingEdu: true};
+        this.state = { education: [], loadingEdu: true };
 
         fetch('api/values/geteducation')
             .then(response => response.json() as Promise<Qualification[]>)
@@ -22,21 +22,35 @@ export class Education extends React.Component<RouteComponentProps<{}>, Educatio
     static renderCurrent(allEducation) {
         let education = allEducation.filter(x => !x.completed);
         return (
-            <tbody>
-                {education.map(item =>
-                    <tr key={item.ID} >
-                        <td>
-                            {item.title}
-                        </td>
-                        <td>
-                            {item.location}
-                        </td>
-                        <td>
-                            {item.studyYear}
-                        </td>
-                    </tr>
-                )}
-            </tbody>
+            <div>
+                <h2> Currently Studying: </h2>
+                <div className='table-responsive'>
+                    <table className='table'>
+                        <thead>
+                            <tr>
+                                <th>Qualification</th>
+                                <th>Studying at</th>
+                                <th>Year</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {education.map(item =>
+                                <tr key={item.ID} >
+                                    <td>
+                                        {item.title}
+                                    </td>
+                                    <td>
+                                        {item.location}
+                                    </td>
+                                    <td>
+                                        {item.studyYear}
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         );
     }
 
@@ -73,44 +87,28 @@ export class Education extends React.Component<RouteComponentProps<{}>, Educatio
 
         return <div>
             <div className="col-md-8">
-            <h2> Currently Studying: </h2>
-                <div className='table-responsive'>
-                    <table className='table'>
-                        <thead>
-                            <tr>
-                                <th>
-                                    Qualification
-                                </th>
-                                <th>
-                                    Studying at
-                                </th>
-                                <th>
-                                    Year
-                                </th>
-                            </tr>
-                        </thead>
-                        {incompleteContents}
-                    </table>
-                </div>
+                {incompleteContents}
                 <br />
-                <h2> Qualifications: </h2>
-                <div className='table-responsive'>
-                    <table className='table'>
-                        <thead>
-                            <tr>
-                                <th>
-                                    Qualification
+                <div>
+                    <h2> Qualifications: </h2>
+                    <div className='table-responsive'>
+                        <table className='table'>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Qualification
                                 </th>
-                                <th>
-                                    Awarded By
+                                    <th>
+                                        Awarded By
                                 </th>
-                                <th>
-                                    Year
+                                    <th>
+                                        Year
                                 </th>
-                            </tr>
-                        </thead>
-                        {completeContents}
-                    </table>
+                                </tr>
+                            </thead>
+                            {completeContents}
+                        </table>
+                    </div>
                 </div>
                 <br />
                 <h2>Scholarships:</h2>

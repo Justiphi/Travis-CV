@@ -29,7 +29,6 @@ namespace WebCv.Models
                 //Setting From , To and CC
                 mail.From = new MailAddress(email.Email, details.Name);
                 mail.To.Add("traviswylie58@gmail.com");
-                mail.CC.Add("travis@streamspike.com");
                 mail.Subject = details.Subject;
                 mail.Body = $"From: {details.Email} \n {details.Content}";
                 mail.IsBodyHtml = true;
